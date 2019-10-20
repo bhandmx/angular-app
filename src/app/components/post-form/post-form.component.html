@@ -1,0 +1,17 @@
+<form>
+  <div>
+  Title:<br>
+  <input type="text" [(ngModel)]="currentPost.title" name="title" #title>
+  </div>
+  <br>
+  <div>
+  Body:<br>
+  <input type="text" [(ngModel)]="currentPost.body" name="body" #body>
+  </div>
+  <div>
+  <input type="hidden" [(ngModel)]="currentPost.id" name="id">
+</div>
+  <br><br>
+  <button *ngIf="isEdit" (click)="addPost(title.value, body.value)">Add Post</button> 
+  <button *ngIf="!isEdit" (click)="updatePost()">Edit Post</button>
+</form> 
